@@ -22,9 +22,9 @@ pipeline {
         
         stage('Upload to Artifactory') {
             steps {
-                script {
-                    sh "jfrog rt u target/demo1-0.0.1-SNAPSHOT.jar my-repo/ --url=http://20.219.35.125:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN}"
-                }
+               
+                    jf 'rt u target/demo1-0.0.1-SNAPSHOT.jar my-repo/ --url=http://20.219.35.125:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN}'
+                
             }
         }
     }
